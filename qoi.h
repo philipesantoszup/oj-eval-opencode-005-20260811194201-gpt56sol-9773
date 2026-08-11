@@ -96,9 +96,9 @@ bool QoiEncode(uint32_t width, uint32_t height, uint8_t channels, uint8_t colors
                     QoiWriteU8(b);
                     QoiWriteU8(a);
                 } else {
-                    const int dr = static_cast<int>(r) - pre_r;
-                    const int dg = static_cast<int>(g) - pre_g;
-                    const int db = static_cast<int>(b) - pre_b;
+                    const int dr = static_cast<int8_t>(r - pre_r);
+                    const int dg = static_cast<int8_t>(g - pre_g);
+                    const int db = static_cast<int8_t>(b - pre_b);
                     const int dr_dg = dr - dg;
                     const int db_dg = db - dg;
 
